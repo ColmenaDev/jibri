@@ -2,7 +2,9 @@
 
 To compile, use:
 
- $ mvn compile
+```
+mvn compile
+```
 
 # Jibri
 
