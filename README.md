@@ -1,3 +1,9 @@
+# Colmena Jibri
+
+To compile, use:
+
+ $ mvn compile
+
 # Jibri
 
 JItsi BRoadcasting Infrastructure
