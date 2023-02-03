@@ -21,7 +21,6 @@ import org.jitsi.jibri.sink.Sink
 fun getFfmpegCommandLinux(ffmpegExecutorParams: FfmpegExecutorParams, sink: Sink): List<String> {
     return listOf(
         "ffmpeg", "-y", "-v", "info",
-        "-i", ":0.0+0,0",
         "-f", ffmpegExecutorParams.audioSource,
         "-i", ffmpegExecutorParams.audioDevice,
 //      "-c:a", "aac", "-ar", "44100", "-b:a", "128k",
