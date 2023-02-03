@@ -162,8 +162,6 @@ internal class FfmpegCapturerTest : ShouldSpec() {
                     val commandCaptor = slot<List<String>>()
                     verify { ffmpeg.launch(capture(commandCaptor), any()) }
                     commandCaptor.captured should contain("alsa")
-                    commandCaptor.captured should contain("option1")
-                    commandCaptor.captured should contain("option2")
                 }
             }
         }

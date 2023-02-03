@@ -24,11 +24,11 @@ fun getFfmpegCommandLinux(ffmpegExecutorParams: FfmpegExecutorParams, sink: Sink
         "-i", ":0.0+0,0",
         "-f", ffmpegExecutorParams.audioSource,
         "-i", ffmpegExecutorParams.audioDevice,
-        "-c:a", "aac", "-ar", "44100", "-b:a", "128k",
-        *sink.options,
-        "-f", sink.format, sink.path
-    )
-}
+//      "-c:a", "aac", "-ar", "44100", "-b:a", "128k",
+        "-c:a", "libmp3lame", "-ar", "44100", "-b:a", "128k",
+        "-f", "tee", "-map", "0:a", "\""+sink.path+"|[onfail=ignore]icecast://source:hackme@streaming.colmena.media:8000/"+sink.path.substringAfterLast("/")+"\"",
+    )}
+
 
 /**
  * Mac support is not officially supported, and only exists to make development of Jibri on Mac easier.

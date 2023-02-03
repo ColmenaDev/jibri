@@ -29,7 +29,7 @@ import java.time.format.DateTimeFormatter
  * are able to append a timestamp to the filename, so we can't give the caller full control
  * over the value anyway.  Because of that I just made the value hard-coded.
  */
-class FileSink(recordingsDirectory: Path, callName: String, extension: String = "mp4") : Sink {
+class FileSink(recordingsDirectory: Path, callName: String, extension: String = "mp3") : Sink {
     val file: Path
     init {
         val suffix = "_${LocalDateTime.now().format(TIMESTAMP_FORMATTER)}.$extension"
