@@ -6,6 +6,13 @@ To compile, use:
 mvn compile
 ```
 
+To create the .jar, use:
+
+```
+mvn package
+```
+
+
 # Jibri
 
 JItsi BRoadcasting Infrastructure
