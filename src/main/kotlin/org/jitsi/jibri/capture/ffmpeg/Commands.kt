@@ -24,8 +24,9 @@ fun getFfmpegCommandLinux(ffmpegExecutorParams: FfmpegExecutorParams, sink: Sink
         "-f", ffmpegExecutorParams.audioSource,
         "-i", ffmpegExecutorParams.audioDevice,
 //      "-c:a", "aac", "-ar", "44100", "-b:a", "128k",
-        "-c:a", "libmp3lame", "-ar", "44100", "-b:a", "128k","-af", "aresample=async=1",
-       sink.path, "icecast://source:hackme@colmena.media:8000/"+sink.path.substringAfterLast("/"),
+        "-c:a", "libmp3lame", "-ar", "44100", "-b:a", "128k",
+       sink.path, "-c:a", "libopus", "-ar", "48000", "-b:a", "96k", "-f", "webm", "-content_type", "audio/webm",
+       "icecast://source:hackme@colmena.media:8000/"+sink.path.substringAfterLast("/").substringBeforeLast(".")+".weba",
 //      "-f", "tee", "-map", "0:a", "\""+sink.path+"|[onfail=ignore]icecast://source:hackme@streaming.colmena.media:8000/"+sink.path.substringAfterLast("/")+"\"",
     )}
 
